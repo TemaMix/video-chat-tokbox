@@ -45,13 +45,13 @@ gem 'bootstrap', '~> 4.0.0.alpha6'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rspec-rails', '~> 3.5'
+  gem 'factory_girl', '~> 4.8'
 end
 
 group :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
-
-  gem 'rspec', '~> 3.5.0'
 end
 
 group :development do
