@@ -1,2 +1,14 @@
-<h1>Groups#show</h1>
-<p>Find me in app/views/groups/show.html.erb</p>
+<% content_for :js_head do %>
+  <script src="https://static.opentok.com/v2/js/opentok.min.js" data-turbolinks-track="reload"></script>
+<% end %>
+
+<div class='row'>
+  <div class='col-md-7'>
+    <div class='js-target-publisher b-target-publisher'></div>
+      <div class="panel panel-primary b-group_info">
+        <div class="panel-heading"><%= I18n.t('view.groups.show.action') %></div>
+        <div class="panel-body"><%= group_url(@group)%></div>
+    </div>
+  </div>
+  <%= render 'groups/groups_list', groups: @groups, current: @group %>
+</div>

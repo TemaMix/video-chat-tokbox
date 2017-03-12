@@ -1,0 +1,29 @@
+ru:
+  time:
+    formats:
+      default: ! '%d-%m-%Y'
+      long: ! '%B %d, %Y'
+      short: ! '%b %d'
+      custom: ! '%A, %M %B, %Y @ %l:%M%P'
+  view:
+    groups:
+      index:
+        group_blank: 'В данный момент доступных трансляций не найдено'
+        group_list: 'Доступные трансляции'
+      show:
+        action: 'Поделиться трансляцией:'
+    shared:
+      title: 'Сервис видеотрансляций'
+  activerecord:
+    models:
+      group: группа
+    attributes:
+      group:
+        name: Название трансляции
+  activemodel:
+    errors:
+      models:
+        new_group:
+          attributes:
+            name:
+              blank: 'Если указать название трансляции, то у вас все получится!'

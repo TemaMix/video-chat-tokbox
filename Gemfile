@@ -39,19 +39,30 @@ gem 'opentok', '~> 2.3'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# Bootstrap 4 ruby gem for Ruby on Rails
-gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'simple_form', '~> 3.4.0'
+
+# Config helps you easily manage environment specific settings in an easy and usable manner.
+gem 'config', '~> 1.4.0'
+
+# Reform gives you a form object with validations and nested setup of models.
+# It is completely framework-agnostic and doesn't care about your database.
+gem 'reform', '>= 2.2.4'
+gem 'reform-rails'
+
+gem 'gon', '>= 6.1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.5'
-  gem 'factory_girl', '~> 4.8'
+  gem 'factory_girl_rails'
 end
 
 group :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -61,6 +72,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  gem 'rb-readline'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -1,0 +1,25 @@
+<div class='col-md-5'>
+  <%- if groups %>
+
+    <%- groups.each do |group| %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= I18n.t('view.groups.index.group_list') %></h3>
+        </div>
+        <div class="panel-body">
+          <div class="list-group">
+            <% if current && current.id == group.id %>
+              <div class="list-group-item"> <p class="list-group-item-text"><%= "#{group.name} - #{l(group.created_at)}" %></p></div>
+            <% else %>
+              <%= link_to group_path(group), class: 'list-group-item' do %>
+                <p class="list-group-item-text"><%= group.name %></p>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <%- end %>
+  <%- else %>
+    <h4><%= I18n.t('view.groups.index.group_blank') %></h4>
+  <%- end %>
+</div>

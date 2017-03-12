@@ -2,13 +2,27 @@
 <html>
   <head>
     <title>VideoChatTokbox</title>
+    <%= Gon::Base.render_data %>
     <%= csrf_meta_tags %>
-
+    <%= yield :js_head  %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/">
+              <%= image_tag 'logo.png', class: 'b-main-logo'%>
+            </a>
+            <p class="navbar-text b-navbar-text"><%= I18n.t('view.shared.title')%></p>
+          </div>
+        </div>
+      </nav>
+      <%= yield %>
+    </div>
   </body>
 </html>

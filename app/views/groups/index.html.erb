@@ -1,2 +1,10 @@
-<h1>Groups#index</h1>
-<p>Find me in app/views/groups/index.html.erb</p>
+<div class='row'>
+  <div class='col-md-7'>
+    <%= simple_form_for @new_group, :url => groups_path do |f| %>
+      <%= f.input :name %>
+      <%= f.button :submit %>
+    <%- end %>
+  </div>
+  <%= render 'groups/groups_list', groups: @groups, current: nil %>
+</div>
+

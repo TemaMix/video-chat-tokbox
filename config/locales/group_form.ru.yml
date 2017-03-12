@@ -1,0 +1,9 @@
+ru:
+  helpers:
+    submit:
+      new_group:
+        create: 'Создать трансляцию'
+  simple_form:
+    labels:
+      new_group:
+        name: 'Название трансляции'

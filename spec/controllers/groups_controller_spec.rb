@@ -10,22 +10,20 @@ RSpec.describe GroupsController, type: :controller do
   end
 
   describe "GET #create" do
-    it "returns http success" do
-      get :create
-      expect(response).to have_http_status(:success)
-    end
-  end
+    before { allow(VideoOpenTok).to receive(:create_session_id).and_return('test string') }
 
-  describe "GET #destroy" do
     it "returns http success" do
-      get :destroy
-      expect(response).to have_http_status(:success)
+      get :create, new_group: {name: 'test'}
+      expect(response).to  redirect_to(group_path(assigns(:new_group)))
     end
   end
 
   describe "GET #show" do
+
+    subject(:group) { create :group }
+
     it "returns http success" do
-      get :show
+      get :show, id: group.id
       expect(response).to have_http_status(:success)
     end
   end
