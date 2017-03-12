@@ -17,22 +17,16 @@
     setup: function() {
       var targetElement =  document.getElementsByClassName('js-target-publisher')[0];
       var publisher = this.otCore.initPublisher(targetElement,this.publisherOptions);
-      publisher.on({
-        streamDestroyed: function (event) {
-          console.log("Publisher stopped streaming. Reason: "
-            + event.reason);
-        }
+      var self = this;
+
+      self.session.on('streamCreated', function(event) {
+        self.session.subscribe(event.stream);
+      })
+      .connect(this.token, function(event) {
+        self.session.publish(publisher);
       });
 
-      var self = this.session;
 
-      self.connect(this.token, function (error) {
-        if (self.capabilities.publish == 1) {
-          self.publish(publisher);
-        } else {
-          console.log("You cannot publish an audio-video stream.");
-        }
-      });
     }
   };
 

@@ -5,9 +5,9 @@
 <div class='row'>
   <div class='col-md-7'>
     <div class='js-target-publisher b-target-publisher'></div>
-      <div class="panel panel-primary b-group_info">
-        <div class="panel-heading"><%= I18n.t('view.groups.show.action') %></div>
-        <div class="panel-body"><%= group_url(@group)%></div>
+    <div class="panel panel-primary b-group_info">
+      <div class="panel-heading"><%= I18n.t('view.groups.show.action') %></div>
+      <div class="panel-body"><%= group_url(@group) %></div>
     </div>
   </div>
   <%= render 'groups/groups_list', groups: @groups, current: @group %>
